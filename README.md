@@ -44,13 +44,12 @@ A modern, minimalistic personal portfolio website built with Next.js, featuring 
    MEDIUM_USERNAME=your_medium_handle
    GITHUB_USERNAME=your_github_handle
    FORMSPREE_ID=your_formspree_id
+   NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id
+   NEXT_PUBLIC_CONTACT_EMAIL=your_email@example.com
    SITE_URL=https://tdavidov.com
    ```
    
-   For client-side access (contact form), also add:
-   ```env
-   NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id
-   ```
+   **Important:** Never commit `.env.local` to git - it contains sensitive information!
 
 4. **Add your assets**
    

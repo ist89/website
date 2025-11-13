@@ -37,6 +37,7 @@ export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || "";
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@example.com";
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -63,7 +64,7 @@ export function ContactSection() {
       }
     } else {
       // Fallback to mailto
-      const mailtoLink = `mailto:t.dav89@gmail.com?subject=Contact from ${formData.name}&body=${encodeURIComponent(formData.message + '\n\nFrom: ' + formData.email)}`;
+      const mailtoLink = `mailto:${contactEmail}?subject=Contact from ${formData.name}&body=${encodeURIComponent(formData.message + '\n\nFrom: ' + formData.email)}`;
       window.location.href = mailtoLink;
       setStatus("success");
     }
