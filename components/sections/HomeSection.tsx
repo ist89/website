@@ -1,6 +1,6 @@
 "use client";
 
-import { Section } from "@/components/Section";
+import { ScrollSection } from "@/components/ScrollSection";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 import { FileText, Code } from "lucide-react";
@@ -9,12 +9,18 @@ export function HomeSection() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 
   return (
-    <Section id="home" className="min-h-screen flex items-center">
+    <ScrollSection id="home" className="flex items-center">
       <div className="text-center w-full">
         <Reveal>
           <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 bg-gradient-to-r from-text-primary via-accent to-text-primary bg-clip-text text-transparent">
@@ -51,7 +57,6 @@ export function HomeSection() {
           </div>
         </Reveal>
       </div>
-    </Section>
+    </ScrollSection>
   );
 }
-

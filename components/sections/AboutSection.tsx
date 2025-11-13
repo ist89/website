@@ -1,4 +1,6 @@
-import { Section } from "@/components/Section";
+"use client";
+
+import { ScrollSection } from "@/components/ScrollSection";
 import { Reveal } from "@/components/motion/Reveal";
 import { Badge } from "@/components/ui/Badge";
 import Image from "next/image";
@@ -20,7 +22,7 @@ const skills = [
 
 export function AboutSection() {
   return (
-    <Section id="about">
+    <ScrollSection id="about">
       <Reveal>
         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
           About Me
@@ -75,7 +77,7 @@ export function AboutSection() {
           </div>
         </div>
       </Reveal>
-    </Section>
+    </ScrollSection>
   );
 }
 

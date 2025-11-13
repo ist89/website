@@ -1,8 +1,7 @@
 "use client";
 
-import { Section } from "@/components/Section";
+import { ScrollSection } from "@/components/ScrollSection";
 import { Reveal } from "@/components/motion/Reveal";
-import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Github, Linkedin, BookOpen } from "lucide-react";
 import { useState, FormEvent } from "react";
@@ -71,7 +70,7 @@ export function ContactSection() {
   };
 
   return (
-    <Section id="contact">
+    <ScrollSection id="contact">
       <Reveal>
         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
           Get In Touch
@@ -199,7 +198,7 @@ export function ContactSection() {
           </div>
         </Reveal>
       </div>
-    </Section>
+    </ScrollSection>
   );
 }
 

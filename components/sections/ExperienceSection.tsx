@@ -1,11 +1,13 @@
-import { Section } from "@/components/Section";
+"use client";
+
+import { ScrollSection } from "@/components/ScrollSection";
 import { Reveal } from "@/components/motion/Reveal";
 import { TimelineItem } from "@/components/cards/TimelineItem";
 import experienceData from "@/data/experience.json";
 
 export function ExperienceSection() {
   return (
-    <Section id="experience">
+    <ScrollSection id="experience">
       <Reveal>
         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
           Experience
@@ -30,7 +32,7 @@ export function ExperienceSection() {
           />
         ))}
       </div>
-    </Section>
+    </ScrollSection>
   );
 }
 

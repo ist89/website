@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -15,23 +16,27 @@ const navItems = [
 
 export function Header() {
   const [activeSection, setActiveSection] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map((item) => item.id);
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            setActiveSection(sections[i]);
+            break;
+          }
         }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check on mount
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -47,6 +52,7 @@ export function Header() {
         top: offsetPosition,
         behavior: "smooth",
       });
+      setIsMenuOpen(false);
     }
   };
 
@@ -65,6 +71,54 @@ export function Header() {
           >
             Tom Davidov
           </button>
+          
+          {/* Hamburger Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.2 }}
+                className="absolute top-full left-0 right-0 md:hidden bg-surface border-b border-divider shadow-lg"
+              >
+                <div className="px-4 py-4 space-y-2">
+                  {navItems.map((item) => {
+                    const isActive = activeSection === item.id;
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToSection(item.id)}
+                        className={cn(
+                          "w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+                          isActive
+                            ? "text-accent bg-accent/10"
+                            : "text-text-secondary hover:text-text-primary hover:bg-surface-light"
+                        )}
+                      >
+                        {item.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Desktop Menu - Hidden */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;

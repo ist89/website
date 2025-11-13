@@ -7,8 +7,13 @@
     @apply border-divider;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-text-primary;
+    overflow-x: hidden;
   }
 
   h1,
@@ -30,6 +35,32 @@
   }
 }
 
+/* Smooth scroll snap for sections */
+@supports (scroll-snap-type: y mandatory) {
+  main {
+    scroll-snap-type: y proximity;
+  }
+  
+  section {
+    scroll-snap-align: start;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  h1 {
+    @apply text-4xl;
+  }
+  
+  h2 {
+    @apply text-3xl;
+  }
+  
+  h3 {
+    @apply text-2xl;
+  }
+}
+
 /* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -38,6 +69,10 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
   }
 }
 
