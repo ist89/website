@@ -1,6 +1,6 @@
-# Todor Davidov - Personal Website
+# Tom Davidov - Personal Website
 
-A modern, minimalistic personal portfolio website built with Next.js, featuring a futuristic dark blue theme with smooth animations.
+A modern, minimalistic personal portfolio website built with Next.js, featuring a futuristic dark blue theme with smooth animations. Single-page scroll experience with smooth section transitions.
 
 ## 🚀 Features
 
@@ -23,7 +23,7 @@ A modern, minimalistic personal portfolio website built with Next.js, featuring 
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/ist89/website.git
    cd website
    ```
 
@@ -41,13 +41,15 @@ A modern, minimalistic personal portfolio website built with Next.js, featuring 
    
    Edit `.env.local` with your values:
    ```env
-   MEDIUM_USERNAME=your_medium_handle
-   GITHUB_USERNAME=your_github_handle
+   MEDIUM_USERNAME=t.dav89
+   GITHUB_USERNAME=ist89
    FORMSPREE_ID=your_formspree_id
    NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id
    NEXT_PUBLIC_CONTACT_EMAIL=your_email@example.com
-   SITE_URL=https://tdavidov.com
+   SITE_URL=http://localhost:3000
    ```
+   
+   **Note:** Replace `your_email@example.com` with your actual email address. Never commit `.env.local` to git!
    
    **Important:** Never commit `.env.local` to git - it contains sensitive information!
 
@@ -63,7 +65,7 @@ A modern, minimalistic personal portfolio website built with Next.js, featuring 
    
    - Edit `data/experience.json` with your work experience
    - Edit `data/pinned-projects.json` to pin specific GitHub repositories
-   - Update social links in `components/Footer.tsx` and `app/contact/page.tsx`
+   - Update social links in `components/Footer.tsx` and `components/sections/ContactSection.tsx`
    - Update metadata in `app/layout.tsx`
 
 ## 🏃 Development
@@ -94,12 +96,9 @@ npm start
 
 ### Option 1: Deploy via GitHub
 
-1. **Push to GitHub**
+1. **Push to GitHub** (if not already done)
    ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin <your-github-repo-url>
+   git remote add origin https://github.com/ist89/website.git
    git push -u origin main
    ```
 
@@ -109,11 +108,12 @@ npm start
    - Click "New Project"
    - Import your repository
    - Add environment variables in Vercel dashboard:
-     - `MEDIUM_USERNAME`
-     - `GITHUB_USERNAME`
-     - `FORMSPREE_ID`
-     - `NEXT_PUBLIC_FORMSPREE_ID`
-     - `SITE_URL`
+     - `MEDIUM_USERNAME` (e.g., `t.dav89`)
+     - `GITHUB_USERNAME` (e.g., `ist89`)
+     - `FORMSPREE_ID` (optional)
+     - `NEXT_PUBLIC_FORMSPREE_ID` (optional)
+     - `NEXT_PUBLIC_CONTACT_EMAIL` (your email address)
+     - `SITE_URL` (your production URL)
    - Click "Deploy"
 
 ### Option 2: Deploy via Vercel CLI
@@ -136,7 +136,7 @@ npm start
 
 1. **Add domain in Vercel**
    - Go to your project settings → Domains
-   - Add your domain (e.g., `tdavidov.com`)
+   - Add your custom domain (e.g., `tomdavidov.com`)
 
 2. **Configure DNS in Namecheap**
    - Log in to Namecheap
@@ -163,21 +163,20 @@ npm start
 
 ```
 website/
-├── app/                    # Next.js App Router pages
+├── app/                    # Next.js App Router
 │   ├── layout.tsx         # Root layout with metadata
-│   ├── page.tsx           # Home page
-│   ├── about/             # About page
-│   ├── experience/        # Experience timeline
-│   ├── projects/          # GitHub projects
-│   ├── blog/              # Medium articles
-│   ├── contact/           # Contact form
-│   ├── resume/            # Resume viewer
-│   └── not-found.tsx      # 404 page
+│   ├── page.tsx           # Main page (single-page scroll)
+│   ├── resume/            # Resume viewer (separate page)
+│   ├── not-found.tsx      # 404 page
+│   └── ...                # Other route files
 ├── components/            # React components
-│   ├── ui/               # UI primitives
-│   ├── cards/            # Card components
+│   ├── sections/         # Page sections (Home, About, etc.)
+│   ├── ui/               # UI primitives (Button, Card, Badge)
+│   ├── cards/            # Card components (Project, Article, Timeline)
 │   ├── motion/           # Animation components
-│   └── background/       # Background effects
+│   ├── background/       # Background effects
+│   ├── Header.tsx        # Navigation header
+│   └── Footer.tsx        # Footer with social links
 ├── lib/                  # Utility functions
 │   ├── github.ts         # GitHub API integration
 │   ├── medium.ts         # Medium RSS integration
@@ -241,11 +240,10 @@ This project is private and proprietary.
 
 ## 👤 Author
 
-**Todor Davidov**
-- Website: [tdavidov.com](https://tdavidov.com)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- Medium: [@yourusername](https://medium.com/@yourusername)
+**Tom Davidov**
+- GitHub: [@ist89](https://github.com/ist89)
+- LinkedIn: [Tom Davidov](https://www.linkedin.com/in/tom-davidov-2108b4a3)
+- Medium: [@t.dav89](https://medium.com/@t.dav89)
 
 ---
 
