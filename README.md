@@ -49,9 +49,7 @@ A modern, minimalistic personal portfolio website built with Next.js, featuring 
    SITE_URL=http://localhost:3000
    ```
    
-   **Note:** Replace `your_email@example.com` with your actual email address. Never commit `.env.local` to git!
-   
-   **Important:** Never commit `.env.local` to git - it contains sensitive information!
+   **Important:** Never commit `.env.local` to git - it contains sensitive information! Replace `your_email@example.com` with your actual email address.
 
 4. **Add your assets**
    
