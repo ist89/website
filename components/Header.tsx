@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Play, Pause } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAudio } from "@/components/audio/AudioProvider";
 
 const navItems = [
   { id: "home", label: "Home" },
@@ -17,6 +18,7 @@ const navItems = [
 export function Header() {
   const [activeSection, setActiveSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isPlaying, play, pause } = useAudio();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,19 +73,47 @@ export function Header() {
           >
             Tom Davidov
           </button>
-          
-          {/* Hamburger Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+
+          <div className="flex items-center space-x-2">
+            {/* Audio Controls */}
+            <button
+              onClick={play}
+              className={cn(
+                "inline-flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300",
+                isPlaying
+                  ? "bg-white/5 border-white/10 text-slate-500"
+                  : "bg-accent/10 border-accent/30 text-accent hover:bg-accent/20"
+              )}
+              aria-label="Play background audio"
+            >
+              <Play className="w-4 h-4" />
+            </button>
+            <button
+              onClick={pause}
+              className={cn(
+                "inline-flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300",
+                !isPlaying
+                  ? "bg-white/5 border-white/10 text-slate-500"
+                  : "bg-accent/10 border-accent/30 text-accent hover:bg-accent/20"
+              )}
+              aria-label="Pause background audio"
+            >
+              <Pause className="w-4 h-4" />
+            </button>
+
+            {/* Hamburger Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
 
           {/* Mobile Menu */}
           <AnimatePresence>

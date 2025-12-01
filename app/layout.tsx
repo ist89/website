@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Starfield } from "@/components/background/Starfield";
+import { AudioProvider } from "@/components/audio/AudioProvider";
 import { getSiteUrl } from "@/lib/utils";
 
 const inter = Inter({
@@ -70,11 +71,13 @@ export default function RootLayout({
         className={`${inter.variable} ${sora.variable} font-sans antialiased bg-background text-text-primary overflow-x-hidden`}
       >
         <Starfield />
-        <Header />
-        <main className="pt-16">
-          {children}
-        </main>
-        <Footer />
+        <AudioProvider>
+          <Header />
+          <main className="pt-16">
+            {children}
+          </main>
+          <Footer />
+        </AudioProvider>
       </body>
     </html>
   );
