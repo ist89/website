@@ -40,7 +40,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.ariaLabel}
-                  className="text-text-secondary hover:text-accent transition-colors"
+                  className="text-text-secondary hover:text-blue-400 transition-colors"
                 >
                   <Icon className="w-5 h-5" />
                 </a>

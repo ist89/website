@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Starfield } from "@/components/background/Starfield";
+// import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 import { AudioProvider } from "@/components/audio/AudioProvider";
 import { getSiteUrl } from "@/lib/utils";
 
@@ -71,6 +72,17 @@ export default function RootLayout({
         className={`${inter.variable} ${sora.variable} font-sans antialiased bg-background text-text-primary overflow-x-hidden`}
       >
         <Starfield />
+        {/* <DottedGlowBackground
+          className="fixed inset-0 -z-10 pointer-events-none"
+          opacity={0.6}
+          gap={25}
+          radius={1.5}
+          speedMin={0.2}
+          speedMax={0.5}
+          color="rgba(255, 255, 255, 0.15)"
+          glowColor="rgba(59, 130, 246, 0.6)"
+          backgroundOpacity={0}
+        /> */}
         <AudioProvider>
           <Header />
           <main className="pt-16">

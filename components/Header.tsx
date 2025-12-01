@@ -82,7 +82,7 @@ export function Header() {
                 "inline-flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300",
                 isPlaying
                   ? "bg-white/5 border-white/10 text-slate-500"
-                  : "bg-accent/10 border-accent/30 text-accent hover:bg-accent/20"
+                  : "bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-blue-500/30 text-blue-400 hover:from-blue-500/20 hover:to-cyan-500/20"
               )}
               aria-label="Play background audio"
             >
@@ -94,7 +94,7 @@ export function Header() {
                 "inline-flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300",
                 !isPlaying
                   ? "bg-white/5 border-white/10 text-slate-500"
-                  : "bg-accent/10 border-accent/30 text-accent hover:bg-accent/20"
+                  : "bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-blue-500/30 text-blue-400 hover:from-blue-500/20 hover:to-cyan-500/20"
               )}
               aria-label="Pause background audio"
             >
@@ -167,7 +167,7 @@ export function Header() {
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}

@@ -28,9 +28,9 @@ export function Starfield() {
         stars.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 1.5,
+          size: Math.random() * 2 + 0.5,
           speed: Math.random() * 0.2 + 0.05,
-          opacity: Math.random(),
+          opacity: Math.random() * 0.5 + 0.5, // 0.5 to 1.0 (brighter)
         });
       }
     };
@@ -72,15 +72,15 @@ export function Starfield() {
     <div className="fixed inset-0 -z-10 bg-space-void overflow-hidden">
       {/* Nebula glow effects */}
       <div 
-        className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-purple-900/20 blur-[120px] opacity-50 animate-pulse" 
+        className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-slate-800/30 blur-[120px] opacity-40 animate-pulse" 
         style={{ animationDuration: '8s' }}
       />
       <div 
-        className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-900/20 blur-[120px] opacity-50 animate-pulse" 
+        className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-slate-700/20 blur-[120px] opacity-40 animate-pulse" 
         style={{ animationDuration: '10s' }}
       />
       
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-80" />
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
       
       {/* Vignette for depth */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,6,23,0.8)_100%)]" />

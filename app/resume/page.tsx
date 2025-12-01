@@ -38,10 +38,11 @@ export default function ResumePage() {
           </div>
         </Reveal>
         <Reveal delay={0.3}>
-          <div className="bg-surface/30 border border-white/10 rounded-3xl p-8 backdrop-blur-md relative overflow-hidden">
+          <div className="bg-slate-900/20 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]">
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent pointer-events-none" />
             <iframe
               src="/resume.pdf"
-              className="w-full h-[800px] rounded-xl bg-white"
+              className="w-full h-[800px] rounded-xl bg-white relative z-10"
               title="Resume PDF Viewer"
             />
           </div>

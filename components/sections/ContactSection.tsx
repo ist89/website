@@ -85,65 +85,78 @@ export function ContactSection() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Reveal delay={0.2}>
-          <div className="bg-surface/30 border border-white/10 rounded-3xl p-8 backdrop-blur-md relative overflow-hidden group hover:border-white/20 transition-colors duration-300">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            <h3 className="text-2xl font-heading font-semibold mb-6 text-blue-100">
+          <div className="bg-slate-900/20 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden group hover:border-blue-500/30 transition-colors duration-500 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]">
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <h3 className="text-2xl font-heading font-semibold mb-6 text-blue-100 flex items-center">
+              <span className="w-2 h-8 bg-blue-500 rounded-full mr-4 shadow-[0_0_20px_rgba(59,130,246,0.5)]" />
               Send a Message
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-text-secondary mb-2"
+                  className="block text-sm font-medium text-blue-200/80 mb-2 pl-1"
                 >
                   Name
                 </label>
-                <input
-                  type="text"
-                  id="name"
-                  required
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-surface/50 border border-white/10 rounded-xl text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 placeholder:text-slate-500"
-                />
+                <div className="relative group/input">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl opacity-0 group-focus-within/input:opacity-50 transition duration-500 blur-sm" />
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="relative w-full px-4 py-4 bg-black/40 border border-white/10 rounded-xl text-blue-50 focus:outline-none focus:border-blue-500/50 transition-all duration-300 placeholder:text-slate-600 backdrop-blur-sm"
+                    placeholder="Enter your name"
+                  />
+                </div>
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-slate-300 mb-2"
+                  className="block text-sm font-medium text-blue-200/80 mb-2 pl-1"
                 >
                   Email
                 </label>
-                <input
-                  type="email"
-                  id="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-surface/50 border border-white/10 rounded-xl text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 placeholder:text-slate-500"
-                />
+                <div className="relative group/input">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl opacity-0 group-focus-within/input:opacity-50 transition duration-500 blur-sm" />
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="relative w-full px-4 py-4 bg-black/40 border border-white/10 rounded-xl text-blue-50 focus:outline-none focus:border-blue-500/50 transition-all duration-300 placeholder:text-slate-600 backdrop-blur-sm"
+                    placeholder="john@example.com"
+                  />
+                </div>
               </div>
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-slate-300 mb-2"
+                  className="block text-sm font-medium text-blue-200/80 mb-2 pl-1"
                 >
                   Message
                 </label>
-                <textarea
-                  id="message"
-                  required
-                  rows={6}
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
-                  className="w-full px-4 py-3 bg-surface/50 border border-white/10 rounded-xl text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none transition-all duration-300 placeholder:text-slate-500"
-                />
+                <div className="relative group/input">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl opacity-0 group-focus-within/input:opacity-50 transition duration-500 blur-sm" />
+                  <textarea
+                    id="message"
+                    required
+                    rows={6}
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    className="relative w-full px-4 py-4 bg-black/40 border border-white/10 rounded-xl text-blue-50 focus:outline-none focus:border-blue-500/50 resize-none transition-all duration-300 placeholder:text-slate-600 backdrop-blur-sm"
+                    placeholder="Your message here..."
+                  />
+                </div>
               </div>
               <Button
                 type="submit"
@@ -166,8 +179,9 @@ export function ContactSection() {
         </Reveal>
 
         <Reveal delay={0.3}>
-          <div className="bg-surface/30 border border-white/10 rounded-3xl p-8 backdrop-blur-md relative overflow-hidden hover:border-white/20 transition-colors duration-300">
-            <h3 className="text-2xl font-heading font-semibold mb-6 text-blue-100">
+          <div className="bg-slate-900/20 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-blue-500/30 transition-colors duration-300 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]">
+            <h3 className="text-2xl font-heading font-semibold mb-6 text-blue-100 flex items-center">
+              <span className="w-2 h-8 bg-cyan-500 rounded-full mr-4 shadow-[0_0_20px_rgba(6,182,212,0.5)]" />
               Connect Socially
             </h3>
             <div className="space-y-4">
@@ -179,18 +193,22 @@ export function ContactSection() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center p-4 bg-surface/50 border border-white/10 rounded-xl hover:border-accent/50 hover:bg-surface/80 transition-all duration-300 group hover:shadow-[0_0_20px_-5px_rgba(99,102,241,0.3)]"
+                    className="flex items-center p-4 bg-black/40 border border-white/5 rounded-2xl hover:border-blue-500/50 transition-all duration-300 group hover:shadow-[0_0_30px_-10px_rgba(59,130,246,0.2)] relative overflow-hidden"
                   >
-                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mr-4 group-hover:bg-accent/20 transition-colors">
-                      <Icon className="w-6 h-6 text-accent-glow" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center mr-5 group-hover:bg-blue-500/20 transition-colors border border-white/5 group-hover:border-blue-500/30 backdrop-blur-sm">
+                      <Icon className="w-6 h-6 text-slate-400 group-hover:text-blue-400 transition-colors duration-300" />
                     </div>
-                    <div>
-                      <h4 className="font-medium text-text-primary group-hover:text-accent-glow transition-colors">
+                    <div className="relative z-10">
+                      <h4 className="text-lg font-medium text-slate-200 group-hover:text-white transition-colors">
                         {link.name}
                       </h4>
-                      <p className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">
+                      <p className="text-sm text-slate-500 group-hover:text-blue-200/70 transition-colors">
                         {link.description}
                       </p>
+                    </div>
+                    <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0 duration-300">
+                      <div className="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.8)]" />
                     </div>
                   </a>
                 );

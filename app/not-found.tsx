@@ -8,7 +8,7 @@ export default function NotFound() {
     <ScrollSection id="not-found" className="min-h-screen flex items-center">
       <div className="text-center w-full">
         <Reveal>
-          <h1 className="text-8xl md:text-9xl font-heading font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-br from-accent via-purple-500 to-accent-dark animate-pulse">
+          <h1 className="text-8xl md:text-9xl font-heading font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-br from-accent via-slate-400 to-accent-dark animate-pulse">
             404
           </h1>
         </Reveal>
