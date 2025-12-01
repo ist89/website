@@ -4,6 +4,7 @@ import { ScrollSection } from "@/components/ScrollSection";
 import { Reveal } from "@/components/motion/Reveal";
 import { ArticleCard } from "@/components/cards/ArticleCard";
 import { MediumArticle } from "@/lib/medium";
+import { BookOpen } from "lucide-react";
 
 interface BlogSectionClientProps {
   articles: MediumArticle[];
@@ -11,9 +12,10 @@ interface BlogSectionClientProps {
 
 export function BlogSectionClient({ articles }: BlogSectionClientProps) {
   return (
-    <ScrollSection id="blog">
+    <ScrollSection id="blog" className="pt-0 md:pt-4 pb-0 md:pb-4">
       <Reveal>
-        <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 flex items-center gap-3">
+          <BookOpen className="w-8 h-8 md:w-10 md:h-10 text-neutral-300" />
           Blog
         </h2>
       </Reveal>

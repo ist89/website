@@ -3,6 +3,8 @@
 import { ScrollSection } from "@/components/ScrollSection";
 import { Reveal } from "@/components/motion/Reveal";
 import { Badge } from "@/components/ui/Badge";
+import { User, Award } from "lucide-react";
+import { PhotoGallery } from "@/components/PhotoGallery";
 
 const skills = [
   "Project Management (PMP®)",
@@ -29,7 +31,8 @@ export function AboutSection() {
   return (
     <ScrollSection id="about">
       <Reveal>
-        <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 flex items-center gap-3">
+          <User className="w-8 h-8 md:w-10 md:h-10 text-neutral-300" />
           Bio
         </h2>
       </Reveal>
@@ -38,7 +41,7 @@ export function AboutSection() {
           <div className="absolute inset-0 bg-gradient-to-b from-neutral-400/5 to-transparent pointer-events-none" />
           <div className="relative z-10">
             <p className="text-lg leading-relaxed">
-              US Army veteran with nearly 9 years of service. Technical Program Manager with 7+ years of experience 
+              US Army veteran with 8 years of service. Technical Program Manager with 7+ years of experience 
               leading complex technical projects across Web3, DeFi, trading automation, and large-scale operational programs. 
               Certified Project Management Professional (PMP®) and Certified Scrum Master (CSM®).
             </p>
@@ -56,9 +59,30 @@ export function AboutSection() {
         </div>
       </Reveal>
 
+      {/* Photo Gallery */}
+      <Reveal delay={0.15}>
+        <PhotoGallery
+          photos={[
+            {
+              src: "/photo1.png",
+              alt: "Photo 1",
+            },
+            {
+              src: "/photo2.png",
+              alt: "Photo 2",
+            },
+            {
+              src: "/photo3.png",
+              alt: "Photo 3",
+            },
+          ]}
+        />
+      </Reveal>
+
       <Reveal delay={0.2}>
-        <h3 className="text-2xl md:text-3xl font-heading font-semibold mb-6 text-neutral-100">
-          Skills & Technologies
+        <h3 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-neutral-100 flex items-center gap-3">
+          <Award className="w-8 h-8 md:w-10 md:h-10 text-neutral-300" />
+          Skills & Certifications
         </h3>
       </Reveal>
       <Reveal delay={0.3}>

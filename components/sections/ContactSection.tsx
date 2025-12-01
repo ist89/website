@@ -3,7 +3,7 @@
 import { ScrollSection } from "@/components/ScrollSection";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
-import { Github, Linkedin, BookOpen } from "lucide-react";
+import { Github, Linkedin, BookOpen, Mail } from "lucide-react";
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 
@@ -71,9 +71,10 @@ export function ContactSection() {
   };
 
   return (
-    <ScrollSection id="contact">
+    <ScrollSection id="contact" className="pt-0 md:pt-4">
       <Reveal>
-        <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+        <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 flex items-center gap-3">
+          <Mail className="w-8 h-8 md:w-10 md:h-10 text-neutral-300" />
           Get In Touch
         </h2>
       </Reveal>
@@ -94,7 +95,6 @@ export function ContactSection() {
             delay: 0.2,
             ease: [0.22, 1, 0.36, 1],
           }}
-          suppressHydrationWarning
           className="bg-neutral-900/20 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden group hover:border-neutral-400/30 transition-colors duration-500 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-neutral-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -102,7 +102,7 @@ export function ContactSection() {
             <span className="w-2 h-8 bg-neutral-400 rounded-full mr-4 shadow-[0_0_20px_rgba(163,163,163,0.5)]" />
             Send a Message
           </h3>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6" suppressHydrationWarning>
               <label
                 htmlFor="name"
                 className="block text-sm font-medium text-neutral-200/80 mb-2 pl-1"
