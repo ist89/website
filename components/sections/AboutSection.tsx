@@ -29,7 +29,7 @@ export function AboutSection() {
         </h2>
       </Reveal>
       <Reveal delay={0.1}>
-        <div className="max-w-3xl space-y-6 text-text-secondary mb-16">
+        <div className="max-w-3xl space-y-6 text-slate-300 mb-16 bg-surface/30 p-8 rounded-3xl border border-white/5 backdrop-blur-sm">
           <p className="text-lg leading-relaxed">
             I'm a passionate software engineer with a focus on building
             scalable, user-friendly web applications. With years of
@@ -51,7 +51,7 @@ export function AboutSection() {
       </Reveal>
 
       <Reveal delay={0.2}>
-        <h3 className="text-2xl md:text-3xl font-heading font-semibold mb-6">
+        <h3 className="text-2xl md:text-3xl font-heading font-semibold mb-6 text-blue-100">
           Skills & Technologies
         </h3>
       </Reveal>
@@ -67,7 +67,8 @@ export function AboutSection() {
 
       <Reveal delay={0.4}>
         <div className="flex justify-center">
-          <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-accent/30 shadow-lg">
+          <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-white/20 shadow-[0_0_50px_-10px_rgba(99,102,241,0.5)] group">
+            <div className="absolute inset-0 bg-accent/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
             <Image
               src="/avatar.jpg"
               alt="Tom Davidov"

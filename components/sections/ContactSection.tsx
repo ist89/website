@@ -85,8 +85,9 @@ export function ContactSection() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Reveal delay={0.2}>
-          <div className="bg-surface border border-divider rounded-xl p-6 backdrop-blur-sm">
-            <h3 className="text-2xl font-heading font-semibold mb-6">
+          <div className="bg-surface/30 border border-white/10 rounded-3xl p-8 backdrop-blur-md relative overflow-hidden group hover:border-white/20 transition-colors duration-300">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <h3 className="text-2xl font-heading font-semibold mb-6 text-blue-100">
               Send a Message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -105,13 +106,13 @@ export function ContactSection() {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full px-4 py-2 bg-surface-light border border-divider rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                  className="w-full px-4 py-3 bg-surface/50 border border-white/10 rounded-xl text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 placeholder:text-slate-500"
                 />
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-text-secondary mb-2"
+                  className="block text-sm font-medium text-slate-300 mb-2"
                 >
                   Email
                 </label>
@@ -123,13 +124,13 @@ export function ContactSection() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full px-4 py-2 bg-surface-light border border-divider rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                  className="w-full px-4 py-3 bg-surface/50 border border-white/10 rounded-xl text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 placeholder:text-slate-500"
                 />
               </div>
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-text-secondary mb-2"
+                  className="block text-sm font-medium text-slate-300 mb-2"
                 >
                   Message
                 </label>
@@ -141,7 +142,7 @@ export function ContactSection() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full px-4 py-2 bg-surface-light border border-divider rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 bg-surface/50 border border-white/10 rounded-xl text-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none transition-all duration-300 placeholder:text-slate-500"
                 />
               </div>
               <Button
@@ -165,8 +166,8 @@ export function ContactSection() {
         </Reveal>
 
         <Reveal delay={0.3}>
-          <div className="bg-surface border border-divider rounded-xl p-6 backdrop-blur-sm">
-            <h3 className="text-2xl font-heading font-semibold mb-6">
+          <div className="bg-surface/30 border border-white/10 rounded-3xl p-8 backdrop-blur-md relative overflow-hidden hover:border-white/20 transition-colors duration-300">
+            <h3 className="text-2xl font-heading font-semibold mb-6 text-blue-100">
               Connect Socially
             </h3>
             <div className="space-y-4">
@@ -178,16 +179,16 @@ export function ContactSection() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center p-4 bg-surface-light border border-divider rounded-lg hover:border-accent/50 hover:bg-surface transition-all group"
+                    className="flex items-center p-4 bg-surface/50 border border-white/10 rounded-xl hover:border-accent/50 hover:bg-surface/80 transition-all duration-300 group hover:shadow-[0_0_20px_-5px_rgba(99,102,241,0.3)]"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mr-4 group-hover:bg-accent/30 transition-colors">
-                      <Icon className="w-6 h-6 text-accent" />
+                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mr-4 group-hover:bg-accent/20 transition-colors">
+                      <Icon className="w-6 h-6 text-accent-glow" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-text-primary">
+                      <h4 className="font-medium text-text-primary group-hover:text-accent-glow transition-colors">
                         {link.name}
                       </h4>
-                      <p className="text-sm text-text-secondary">
+                      <p className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">
                         {link.description}
                       </p>
                     </div>

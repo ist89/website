@@ -1,4 +1,4 @@
-import { Section } from "@/components/Section";
+import { ScrollSection } from "@/components/ScrollSection";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Download, FileText } from "lucide-react";
@@ -6,14 +6,14 @@ import { Download, FileText } from "lucide-react";
 export default function ResumePage() {
   return (
     <>
-      <Section>
+      <ScrollSection id="resume" className="pt-32">
         <Reveal>
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white">
             Resume
           </h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="text-lg text-text-secondary mb-8 max-w-2xl">
+          <p className="text-lg text-slate-400 mb-8 max-w-2xl">
             Download my resume or view it directly in your browser.
           </p>
         </Reveal>
@@ -38,15 +38,15 @@ export default function ResumePage() {
           </div>
         </Reveal>
         <Reveal delay={0.3}>
-          <div className="bg-surface border border-divider rounded-xl p-8">
+          <div className="bg-surface/30 border border-white/10 rounded-3xl p-8 backdrop-blur-md relative overflow-hidden">
             <iframe
               src="/resume.pdf"
-              className="w-full h-[800px] rounded-lg"
+              className="w-full h-[800px] rounded-xl bg-white"
               title="Resume PDF Viewer"
             />
           </div>
         </Reveal>
-      </Section>
+      </ScrollSection>
     </>
   );
 }

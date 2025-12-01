@@ -23,17 +23,17 @@ export function HomeSection() {
     <ScrollSection id="home" className="flex items-center">
       <div className="text-center w-full">
         <Reveal>
-          <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 bg-gradient-to-r from-text-primary via-accent to-text-primary bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-8xl font-heading font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
             Tom Davidov
           </h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="text-xl md:text-2xl text-text-secondary mb-4">
+          <p className="text-2xl md:text-3xl text-blue-200/80 mb-4 font-light tracking-wide">
             Software Engineer & Technology Enthusiast
           </p>
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="text-lg text-text-secondary/80 mb-12 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
             Building scalable web applications with modern technologies.
             Passionate about clean code, user experience, and continuous learning.
           </p>

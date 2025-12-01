@@ -29,8 +29,8 @@ export function TimelineItem({
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="relative pl-8 pb-12 border-l border-divider last:border-l-0 last:pb-0"
     >
-      <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-accent border-4 border-background" />
-      <div className="bg-surface border border-divider rounded-lg p-6 hover:border-accent/50 transition-colors">
+      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent shadow-[0_0_10px_rgba(99,102,241,0.8)] border-2 border-white/20 z-10" />
+      <div className="bg-surface/30 border border-white/10 rounded-2xl p-6 backdrop-blur-md hover:bg-surface/50 transition-colors duration-300">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
           <div>
             <h3 className="text-xl font-heading font-semibold text-text-primary mb-1">

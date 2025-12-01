@@ -3,7 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { AnimatedGradient } from "@/components/background/AnimatedGradient";
+import { Starfield } from "@/components/background/Starfield";
 import { getSiteUrl } from "@/lib/utils";
 
 const inter = Inter({
@@ -67,9 +67,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${sora.variable} font-sans antialiased bg-background text-text-primary`}
+        className={`${inter.variable} ${sora.variable} font-sans antialiased bg-background text-text-primary overflow-x-hidden`}
       >
-        <AnimatedGradient />
+        <Starfield />
         <Header />
         <main className="pt-16">
           {children}
