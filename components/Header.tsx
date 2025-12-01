@@ -8,7 +8,7 @@ import { useAudio } from "@/components/audio/AudioProvider";
 
 const navItems = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About" },
+  { id: "about", label: "Bio" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "blog", label: "Blog" },
@@ -18,10 +18,20 @@ const navItems = [
 export function Header() {
   const [activeSection, setActiveSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showName, setShowName] = useState(false);
   const { isPlaying, play, pause } = useAudio();
 
   useEffect(() => {
     const handleScroll = () => {
+      // Check if hero section is scrolled past
+      const heroSection = document.getElementById("home");
+      if (heroSection) {
+        const rect = heroSection.getBoundingClientRect();
+        // Show name when hero section's bottom is above the viewport
+        setShowName(rect.bottom < 0);
+      }
+
+      // Update active section
       const sections = navItems.map((item) => item.id);
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
@@ -66,15 +76,56 @@ export function Header() {
       className="fixed top-0 left-0 right-0 z-50 bg-[#030712]/80 backdrop-blur-xl border-b border-white/5"
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <button
-            onClick={() => scrollToSection("home")}
-            className="text-xl font-heading font-semibold text-text-primary hover:text-accent transition-colors"
-          >
-            Tom Davidov
-          </button>
+        <div className="flex items-center h-16 relative">
+          {/* Left: Name (appears after scrolling past hero) */}
+          <div className="flex-1 flex items-center">
+            <AnimatePresence>
+              {showName && (
+                <motion.button
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => scrollToSection("home")}
+                  className="text-xl font-heading font-semibold text-text-primary hover:text-slate-300 transition-colors"
+                >
+                  Tom Davidov
+                </motion.button>
+              )}
+            </AnimatePresence>
+          </div>
 
-          <div className="flex items-center space-x-2">
+          {/* Center: Navigation Menu */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={cn(
+                    "text-sm font-medium transition-colors relative",
+                    isActive
+                      ? "text-slate-300"
+                      : "text-text-secondary hover:text-text-primary"
+                  )}
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-slate-400 to-slate-300"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Right: Audio Controls and Hamburger Menu */}
+          <div className="flex-1 flex items-center justify-end">
+            <div className="flex items-center space-x-2">
             {/* Audio Controls */}
             <button
               onClick={play}
@@ -82,7 +133,7 @@ export function Header() {
                 "inline-flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300",
                 isPlaying
                   ? "bg-white/5 border-white/10 text-slate-500"
-                  : "bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-blue-500/30 text-blue-400 hover:from-blue-500/20 hover:to-cyan-500/20"
+                  : "bg-gradient-to-r from-slate-400/10 to-slate-300/10 border-slate-400/30 text-slate-300 hover:from-slate-400/20 hover:to-slate-300/20"
               )}
               aria-label="Play background audio"
             >
@@ -93,8 +144,8 @@ export function Header() {
               className={cn(
                 "inline-flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300",
                 !isPlaying
-                  ? "bg-white/5 border-white/10 text-slate-500"
-                  : "bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-blue-500/30 text-blue-400 hover:from-blue-500/20 hover:to-cyan-500/20"
+                  ? "bg-white/5 border-white/10 text-slate-500 hover:bg-slate-400/10 hover:border-slate-400/30 hover:text-slate-300"
+                  : "bg-gradient-to-r from-slate-400/10 to-slate-300/10 border-slate-400/30 text-slate-300 hover:from-slate-400/20 hover:to-slate-300/20"
               )}
               aria-label="Pause background audio"
             >
@@ -113,6 +164,7 @@ export function Header() {
                 <Menu className="w-6 h-6" />
               )}
             </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}
@@ -135,7 +187,7 @@ export function Header() {
                         className={cn(
                           "w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors",
                           isActive
-                            ? "text-accent bg-accent/10"
+                            ? "text-slate-300 bg-slate-700/10"
                             : "text-text-secondary hover:text-text-primary hover:bg-surface-light"
                         )}
                       >
@@ -148,33 +200,6 @@ export function Header() {
             )}
           </AnimatePresence>
 
-          {/* Desktop Menu - Hidden */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={cn(
-                    "text-sm font-medium transition-colors relative",
-                    isActive
-                      ? "text-accent"
-                      : "text-text-secondary hover:text-text-primary"
-                  )}
-                >
-                  {item.label}
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </button>
-              );
-            })}
-          </div>
         </div>
       </nav>
     </motion.header>

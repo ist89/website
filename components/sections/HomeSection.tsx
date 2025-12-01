@@ -34,13 +34,13 @@ export function HomeSection() {
           <div className="flex-1 space-y-6 text-center md:text-left">
             <Reveal>
               {/* ===== EDIT HERO TITLE HERE ===== */}
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
                 Tom Davidov
               </h1>
             </Reveal>
             <Reveal delay={0.1}>
               {/* ===== EDIT SUBTITLE HERE ===== */}
-              <p className="text-xl sm:text-2xl md:text-3xl text-blue-200/80 mb-4 font-light tracking-wide">
+              <p className="text-xl sm:text-2xl md:text-3xl text-slate-200/80 mb-4 font-light tracking-wide">
                 Technical Program Manager & AI/ML Enthusiast
               </p>
             </Reveal>

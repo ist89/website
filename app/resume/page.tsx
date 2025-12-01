@@ -8,7 +8,7 @@ export default function ResumePage() {
     <>
       <ScrollSection id="resume" className="pt-32">
         <Reveal>
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-white">
             Resume
           </h1>
         </Reveal>
@@ -39,7 +39,7 @@ export default function ResumePage() {
         </Reveal>
         <Reveal delay={0.3}>
           <div className="bg-slate-900/20 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]">
-            <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-400/5 to-transparent pointer-events-none" />
             <iframe
               src="/resume.pdf"
               className="w-full h-[800px] rounded-xl bg-white relative z-10"

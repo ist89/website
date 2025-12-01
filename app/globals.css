@@ -138,3 +138,11 @@
   }
 }
 
+/* Responsive canvas scaling for hero avatar */
+@media (max-width: 640px) {
+  canvas[aria-label="Pixelated rendering of source image"] {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+

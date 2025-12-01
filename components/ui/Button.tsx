@@ -29,7 +29,7 @@ export function Button({
   
   const variants = {
     primary:
-      "bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600 text-white shadow-[0_0_20px_-5px_rgba(29,78,216,0.5)] hover:shadow-[0_0_30px_-5px_rgba(29,78,216,0.7)] hover:from-blue-800 hover:via-blue-700 hover:to-cyan-700 border border-blue-500/30",
+      "bg-gradient-to-r from-slate-600 via-slate-500 to-slate-400 text-white shadow-[0_0_20px_-5px_rgba(71,85,105,0.5)] hover:shadow-[0_0_30px_-5px_rgba(71,85,105,0.7)] hover:from-slate-700 hover:via-slate-600 hover:to-slate-500 border border-slate-400/30",
     secondary:
       "bg-surface/50 text-text-primary border border-white/10 hover:bg-surface/80 hover:border-white/20 backdrop-blur-sm",
     ghost:

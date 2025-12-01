@@ -18,14 +18,14 @@ const config: Config = {
   			},
   			accent: {
   				DEFAULT: 'hsl(var(--accent))',
-  				glow: '#60a5fa',
-  				dark: '#1d4ed8',
+  				glow: '#94a3b8',
+  				dark: '#475569',
   				foreground: 'hsl(var(--accent-foreground))'
   			},
   			space: {
   				void: '#0a0a0a',
   				starlight: '#f8fafc',
-  				nebula: 'rgba(59, 130, 246, 0.1)'
+  				nebula: 'rgba(148, 163, 184, 0.1)'
   			},
   			text: {
   				primary: '#f8fafc',
@@ -81,7 +81,7 @@ const config: Config = {
   		},
   		backgroundImage: {
   			'glass-gradient': 'linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
-  			'glow-conic': 'conic-gradient(from 180deg at 50% 50%, #3b82f6 0deg, #475569 180deg, #1e293b 360deg)'
+  			'glow-conic': 'conic-gradient(from 180deg at 50% 50%, #94a3b8 0deg, #475569 180deg, #1e293b 360deg)'
   		},
   		backdropBlur: {
   			xs: '2px'

@@ -13,7 +13,7 @@ export default function NotFound() {
           </h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="text-2xl md:text-3xl font-heading font-semibold mb-4 text-blue-100">
+          <h2 className="text-2xl md:text-3xl font-heading font-semibold mb-4 text-slate-100">
             Lost in Space
           </h2>
         </Reveal>

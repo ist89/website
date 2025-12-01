@@ -35,7 +35,7 @@ export function AboutSection() {
       </Reveal>
       <Reveal delay={0.1}>
         <div className="max-w-3xl space-y-6 text-slate-300 mb-16 bg-slate-900/20 p-8 rounded-3xl border border-white/10 backdrop-blur-xl relative overflow-hidden shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]">
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-400/5 to-transparent pointer-events-none" />
           <div className="relative z-10">
             <p className="text-lg leading-relaxed">
               US Army veteran with nearly 9 years of service. Technical Program Manager with 7+ years of experience 
@@ -57,7 +57,7 @@ export function AboutSection() {
       </Reveal>
 
       <Reveal delay={0.2}>
-        <h3 className="text-2xl md:text-3xl font-heading font-semibold mb-6 text-blue-100">
+        <h3 className="text-2xl md:text-3xl font-heading font-semibold mb-6 text-slate-100">
           Skills & Technologies
         </h3>
       </Reveal>

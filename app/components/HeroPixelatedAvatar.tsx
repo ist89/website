@@ -39,79 +39,84 @@ import { PixelatedCanvas } from "@/components/ui/pixelated-canvas";
  */
 export function HeroPixelatedAvatar() {
   return (
-    <div className="mx-auto mt-8 md:mt-0 -mt-[15px]">
-      <PixelatedCanvas
-        // ===== IMAGE PATH =====
-        // Replace /profile-photo.png with your image path
-        // Place your PNG image in the public/ folder
-        // Supports transparent backgrounds
-        src="/profile-photo.png"
-        
-        // ===== SIZE =====
-        // Adjust these to change avatar dimensions
-        // Decreased by 20%: 600 -> 480, 750 -> 600
-        width={480}
-        height={600}
-        
-        // ===== PIXELATION =====
-        // Smaller cellSize = more detail (try 2-5)
-        cellSize={3}
-        // Size of each pixel dot (0.5 = half size, 1.0 = full cell size)
-        dotScale={0.9}
-        
-        // ===== SHAPE =====
-        // "square" or "circle" for pixel shape
-        shape="square"
-        
-        // ===== BACKGROUND =====
-        // Set to empty string or undefined to remove background
-        // For transparent PNGs, this will show transparent background
-        backgroundColor=""
-        
-        // ===== DROPOUT =====
-        // Randomly hides pixels (0 = none hidden, 1 = all hidden)
-        dropoutStrength={0.4}
-        
-        // ===== INTERACTIVITY =====
-        // Enable mouse hover distortion effects
-        interactive
-        
-        // ===== DISTORTION (hover effects) =====
-        // How strong the effect is when hovering
-        distortionStrength={3}
-        // How far from mouse the effect reaches (in pixels)
-        distortionRadius={80}
-        // Type of distortion: "swirl" (rotates), "repel" (pushes away), or "attract" (pulls toward)
-        distortionMode="swirl"
-        // How fast the effect follows the mouse (0-1)
-        followSpeed={0.2}
-        
-        // ===== JITTER (constant animation) =====
-        // How much pixels move around constantly
-        jitterStrength={4}
-        // How fast the jitter animation is
-        jitterSpeed={4}
-        
-        // ===== COLOR EFFECTS =====
-        // Average colors for smoother look
-        sampleAverage
-        // Tint color overlay (white tint in this case)
-        tintColor="#FFFFFF"
-        // How strong the tint is (0 = no tint, 1 = full tint)
-        tintStrength={0.2}
-        
-        // ===== IMAGE FITTING =====
-        // "cover" = fills canvas, cropping if needed (may cut off parts)
-        // "contain" = fits entire image within canvas (shows full image, no cropping)
-        // "fill" = stretches to fill canvas
-        // Changed to "contain" to prevent head from being cut off
-        objectFit="contain"
-        
-        // ===== STYLING =====
-        // Removed border and shadow for clean look
-        // bg-transparent ensures no background color shows through
-        className="bg-transparent"
-      />
+    <div className="mx-auto mt-8 md:mt-0 -mt-[15px] flex justify-center w-full overflow-hidden">
+      <div className="w-full max-w-[300px] sm:max-w-[380px] md:max-w-[480px]">
+        <PixelatedCanvas
+          // ===== IMAGE PATH =====
+          // Replace /profile-photo.png with your image path
+          // Place your PNG image in the public/ folder
+          // Supports transparent backgrounds
+          src="/profile-photo.png"
+          
+          // ===== SIZE =====
+          // Adjust these to change avatar dimensions
+          // Responsive: smaller on mobile, full size on desktop
+          // Mobile: ~300px width, Desktop: 480px width
+          width={480}
+          height={600}
+          responsive={true}
+          
+          // ===== PIXELATION =====
+          // Smaller cellSize = more detail (try 2-5)
+          cellSize={3}
+          // Size of each pixel dot (0.5 = half size, 1.0 = full cell size)
+          dotScale={0.9}
+          
+          // ===== SHAPE =====
+          // "square" or "circle" for pixel shape
+          shape="square"
+          
+          // ===== BACKGROUND =====
+          // Set to empty string or undefined to remove background
+          // For transparent PNGs, this will show transparent background
+          backgroundColor=""
+          
+          // ===== DROPOUT =====
+          // Randomly hides pixels (0 = none hidden, 1 = all hidden)
+          dropoutStrength={0.4}
+          
+          // ===== INTERACTIVITY =====
+          // Enable mouse hover distortion effects
+          interactive
+          
+          // ===== DISTORTION (hover effects) =====
+          // How strong the effect is when hovering
+          distortionStrength={3}
+          // How far from mouse the effect reaches (in pixels)
+          distortionRadius={80}
+          // Type of distortion: "swirl" (rotates), "repel" (pushes away), or "attract" (pulls toward)
+          distortionMode="swirl"
+          // How fast the effect follows the mouse (0-1)
+          followSpeed={0.2}
+          
+          // ===== JITTER (constant animation) =====
+          // How much pixels move around constantly
+          jitterStrength={4}
+          // How fast the jitter animation is
+          jitterSpeed={4}
+          
+          // ===== COLOR EFFECTS =====
+          // Average colors for smoother look
+          sampleAverage
+          // Tint color overlay (white tint in this case)
+          tintColor="#FFFFFF"
+          // How strong the tint is (0 = no tint, 1 = full tint)
+          tintStrength={0.2}
+          
+          // ===== IMAGE FITTING =====
+          // "cover" = fills canvas, cropping if needed (may cut off parts)
+          // "contain" = fits entire image within canvas (shows full image, no cropping)
+          // "fill" = stretches to fill canvas
+          // Changed to "contain" to prevent head from being cut off
+          objectFit="contain"
+          
+          // ===== STYLING =====
+          // Removed border and shadow for clean look
+          // bg-transparent ensures no background color shows through
+          // max-w-full ensures it scales down on mobile while maintaining aspect ratio
+          className="bg-transparent max-w-full h-auto"
+        />
+      </div>
     </div>
   );
 }

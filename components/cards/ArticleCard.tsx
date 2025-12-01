@@ -26,7 +26,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
             href={article.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-accent hover:text-blue-400 text-sm font-medium transition-colors"
+            className="inline-flex items-center text-accent hover:text-slate-300 text-sm font-medium transition-colors"
           >
             Read on Medium
             <ExternalLink className="w-4 h-4 ml-2" />
