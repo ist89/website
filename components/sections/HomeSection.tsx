@@ -29,13 +29,13 @@ export function HomeSection() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="text-2xl md:text-3xl text-blue-200/80 mb-4 font-light tracking-wide">
-            Software Engineer & Technology Enthusiast
+            Technical Program Manager & AI/ML Enthusiast
           </p>
         </Reveal>
         <Reveal delay={0.2}>
           <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Building scalable web applications with modern technologies.
-            Passionate about clean code, user experience, and continuous learning.
+            US Army Veteran | PMP® & CSM® Certified | Leading complex technical projects in Web3, DeFi, and AI-driven solutions.
+            Currently pursuing MBA, with plans for MS in IT and PhD in AI/ML.
           </p>
         </Reveal>
         <Reveal delay={0.3}>

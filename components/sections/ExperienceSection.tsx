@@ -7,7 +7,7 @@ import experienceData from "@/data/experience.json";
 
 export function ExperienceSection() {
   return (
-    <ScrollSection id="experience">
+    <ScrollSection id="experience" className="pb-0 md:pb-4">
       <Reveal>
         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
           Experience
@@ -29,6 +29,8 @@ export function ExperienceSection() {
             description={item.description}
             technologies={item.technologies}
             index={index}
+            location={item.location}
+            projects={item.projects}
           />
         ))}
       </div>

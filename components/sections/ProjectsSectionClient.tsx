@@ -11,7 +11,7 @@ interface ProjectsSectionClientProps {
 
 export function ProjectsSectionClient({ projects }: ProjectsSectionClientProps) {
   return (
-    <ScrollSection id="projects">
+    <ScrollSection id="projects" className="pt-0 md:pt-4">
       <Reveal>
         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
           Projects

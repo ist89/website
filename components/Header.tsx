@@ -63,7 +63,7 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-white/5"
+      className="fixed top-0 left-0 right-0 z-50 bg-[#030712]/80 backdrop-blur-xl border-b border-white/5"
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -125,7 +125,7 @@ export function Header() {
                 transition={{ duration: 0.2 }}
                 className="absolute top-full left-0 right-0 md:hidden shadow-2xl shadow-black/50"
               >
-                <div className="px-4 py-4 space-y-2 bg-background/90 backdrop-blur-xl border-t border-white/5">
+                <div className="px-4 py-4 space-y-2 bg-[#030712]/95 backdrop-blur-xl border-t border-white/5">
                   {navItems.map((item) => {
                     const isActive = activeSection === item.id;
                     return (

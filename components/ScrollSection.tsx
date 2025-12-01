@@ -74,7 +74,7 @@ export function ScrollSection({
       id={id}
       style={{ opacity, scale }}
       className={cn(
-        "min-h-screen flex items-center justify-center py-16 md:py-24 scroll-mt-20",
+        "min-h-screen flex items-center justify-center py-8 md:py-12 scroll-mt-20",
         className
       )}
     >

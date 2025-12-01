@@ -1,24 +1,59 @@
 [
   {
-    "title": "Senior Software Engineer",
-    "company": "Tech Company",
-    "period": "2022 - Present",
-    "description": "Leading development of scalable web applications using modern technologies. Mentoring junior developers and contributing to architectural decisions.",
-    "technologies": ["React", "TypeScript", "Node.js", "AWS"]
+    "title": "Technical Program Manager",
+    "company": "RST LLC",
+    "location": "Lisbon, Portugal (Remote)",
+    "period": "October 2023 - Present",
+    "description": "Leading complex technical projects across Web3, DeFi, trading automation, and large-scale operational programs. Managing integrated project timelines and sprint schedules across multiple development streams, ensuring deliverables meet planned milestones. Delivering recurring project status reports summarizing risks, performance metrics, blockers, and next-phase priorities for leadership.",
+    "technologies": ["Agile/Scrum", "CI/CD", "GitLab", "Web3", "DeFi", "Blockchain", "Polygon", "Solana", "Project Management"],
+    "projects": [
+      {
+        "name": "Olympus App - Copy Trading Bot",
+        "description": "Lead the end-to-end development of Olympus, a decentralized copy trading platform for prediction markets on the Polygon network. Manage cross-functional team of full-stack developers and moderators using Agile methodologies, sprint planning, and CI/CD pipelines on GitLab.",
+        "link": "https://olympus-app.gitbook.io/docs/"
+      },
+      {
+        "name": "Valhalla Copy Trading - Discord Bot",
+        "description": "Consulted on and supported feature development for Valhalla, a Web3 copy-trading Discord bot built within the Solana ecosystem, enabling users to automatically mirror advanced trading strategies.",
+        "link": "https://valhalla-bot.gitbook.io/valhalla-bot"
+      },
+      {
+        "name": "SOL Decoder - Trading Intelligence Tool",
+        "description": "Consulted on product vision, architecture, and strategy for SOL Decoder, a DeFi analytics and copy-trading platform built within the Solana ecosystem. Defined technical requirements and data integration pathways to automate DLMM liquidity farming, automated trading, and real-time portfolio monitoring.",
+        "link": "https://decoder-1.gitbook.io/decoder-farmer"
+      }
+    ]
   },
   {
-    "title": "Software Engineer",
-    "company": "Startup Inc",
-    "period": "2020 - 2022",
-    "description": "Built and maintained customer-facing features. Collaborated with cross-functional teams to deliver high-quality products.",
-    "technologies": ["JavaScript", "React", "Python", "PostgreSQL"]
+    "title": "Europe Regional Manager",
+    "company": "Bering Global Solutions / Global Asset Technologies (BSNC Companies)",
+    "location": "Rzeszow, Poland",
+    "period": "January 2022 - October 2023",
+    "description": "Directed $35M+ logistics operations for U.S. Department of State aid to Ukraine, delivering 100+ vehicles worth $6.2M within five months. Liaised with INL, vendors, and customs partners to ensure on-time, compliant delivery of critical assets. Conducted risk assessments and quality control to safeguard budgets and reduce defects across multiple projects.",
+    "technologies": ["Logistics Management", "Risk Assessment", "Quality Control", "Cross-Border Operations", "Stakeholder Management"]
   },
   {
-    "title": "Junior Developer",
-    "company": "Agency XYZ",
-    "period": "2018 - 2020",
-    "description": "Developed responsive web applications and learned best practices in software development.",
-    "technologies": ["HTML", "CSS", "JavaScript", "PHP"]
+    "title": "Safety, Performance & Leadership Coach",
+    "company": "CAVU International",
+    "location": "Virginia Beach, VA",
+    "period": "October 2019 - January 2021",
+    "description": "Designed and implemented performance and safety programs for clients in high-risk industries, improving reliability and compliance. Led cross-functional teams and trained 100+ personnel, fostering accountability and leadership engagement.",
+    "technologies": ["Training & Development", "Safety Programs", "Performance Management", "Team Leadership"]
+  },
+  {
+    "title": "Division Chief",
+    "company": "Combined Air Operations Center",
+    "location": "Doha, Qatar",
+    "period": "October 2018 - April 2019",
+    "description": "Directed multinational team delivering operational intelligence and daily briefings for senior U.S. and coalition leaders. Coordinated airspace deconfliction with Russian forces, enabling precision operations and humanitarian missions.",
+    "technologies": ["Operational Intelligence", "Strategic Planning", "Multinational Coordination", "Risk Management"]
+  },
+  {
+    "title": "US Army",
+    "company": "United States Army",
+    "location": "Various Locations",
+    "period": "2011 - 2019",
+    "description": "Served honorably for nearly 9 years in the US Army, gaining extensive experience in leadership, operations management, and cross-functional team coordination. Developed strong skills in strategic planning, risk assessment, and mission-critical execution.",
+    "technologies": ["Leadership", "Operations Management", "Strategic Planning", "Team Coordination"]
   }
 ]
-

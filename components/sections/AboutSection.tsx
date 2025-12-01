@@ -3,21 +3,26 @@
 import { ScrollSection } from "@/components/ScrollSection";
 import { Reveal } from "@/components/motion/Reveal";
 import { Badge } from "@/components/ui/Badge";
-import Image from "next/image";
 
 const skills = [
+  "Project Management (PMP®)",
+  "Agile/Scrum (CSM®)",
+  "AI/ML",
+  "Web3",
+  "DeFi",
   "TypeScript",
   "React",
   "Next.js",
   "Node.js",
   "Python",
-  "AWS",
-  "PostgreSQL",
-  "Docker",
-  "GraphQL",
-  "Tailwind CSS",
-  "Framer Motion",
-  "Git",
+  "Cybersecurity",
+  "CI/CD",
+  "DevOps",
+  "GitLab",
+  "N8N",
+  "SaaS",
+  "ITIL v4",
+  "Lean Six Sigma",
 ];
 
 export function AboutSection() {
@@ -25,7 +30,7 @@ export function AboutSection() {
     <ScrollSection id="about">
       <Reveal>
         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-          About Me
+          Bio
         </h2>
       </Reveal>
       <Reveal delay={0.1}>
@@ -33,21 +38,19 @@ export function AboutSection() {
           <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent pointer-events-none" />
           <div className="relative z-10">
             <p className="text-lg leading-relaxed">
-              I'm a passionate software engineer with a focus on building
-              scalable, user-friendly web applications. With years of
-              experience in modern web technologies, I specialize in creating
-              solutions that are both performant and maintainable.
+              US Army veteran with nearly 9 years of service. Technical Program Manager with 7+ years of experience 
+              leading complex technical projects across Web3, DeFi, trading automation, and large-scale operational programs. 
+              Certified Project Management Professional (PMP®) and Certified Scrum Master (CSM®).
             </p>
             <p className="text-lg leading-relaxed mt-6">
-              My approach combines technical excellence with a deep understanding
-              of user needs. I believe in writing clean, well-documented code
-              and staying current with industry best practices and emerging
-              technologies.
+              Passionate about AI, Web3, and DeFi technologies. Currently in final MBA term at Southern New Hampshire 
+              University (4.0 GPA), with plans to pursue an MS in IT, followed by a PhD in AI/ML. Working towards ASQ 
+              Lean Six Sigma Green Belt (LSS-GB) and ITIL v4 certifications.
             </p>
             <p className="text-lg leading-relaxed mt-6">
-              When I'm not coding, you'll find me exploring new frameworks,
-              contributing to open source projects, or sharing knowledge through
-              technical writing.
+              Beyond program management, an amateur frontend developer with experience in cybersecurity. Has created 
+              several passive income streams through SaaS N8N AI agents. Managed $35M+ logistics operations for U.S. 
+              Department of State aid to Ukraine.
             </p>
           </div>
         </div>
@@ -59,26 +62,12 @@ export function AboutSection() {
         </h3>
       </Reveal>
       <Reveal delay={0.3}>
-        <div className="flex flex-wrap gap-3 mb-16">
+        <div className="flex flex-wrap gap-3">
           {skills.map((skill) => (
             <Badge key={skill} variant="accent">
               {skill}
             </Badge>
           ))}
-        </div>
-      </Reveal>
-
-      <Reveal delay={0.4}>
-        <div className="flex justify-center">
-          <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-white/20 shadow-[0_0_50px_-10px_rgba(99,102,241,0.5)] group">
-            <div className="absolute inset-0 bg-accent/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-            <Image
-              src="/avatar.jpg"
-              alt="Tom Davidov"
-              fill
-              className="object-cover"
-            />
-          </div>
         </div>
       </Reveal>
     </ScrollSection>
