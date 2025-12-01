@@ -73,7 +73,7 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-[#030712]/80 backdrop-blur-xl border-b border-white/5"
+      className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/70 backdrop-blur-xl border-b border-white/5"
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16 relative">
@@ -87,7 +87,7 @@ export function Header() {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => scrollToSection("home")}
-                  className="text-xl font-heading font-semibold text-text-primary hover:text-slate-300 transition-colors"
+                  className="text-xl font-heading font-semibold text-text-primary hover:text-neutral-300 transition-colors"
                 >
                   Tom Davidov
                 </motion.button>
@@ -106,7 +106,7 @@ export function Header() {
                   className={cn(
                     "text-sm font-medium transition-colors relative",
                     isActive
-                      ? "text-slate-300"
+                      ? "text-neutral-300"
                       : "text-text-secondary hover:text-text-primary"
                   )}
                 >
@@ -114,7 +114,7 @@ export function Header() {
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-slate-400 to-slate-300"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-neutral-400 to-neutral-300"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -132,8 +132,8 @@ export function Header() {
               className={cn(
                 "inline-flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300",
                 isPlaying
-                  ? "bg-white/5 border-white/10 text-slate-500"
-                  : "bg-gradient-to-r from-slate-400/10 to-slate-300/10 border-slate-400/30 text-slate-300 hover:from-slate-400/20 hover:to-slate-300/20"
+                  ? "bg-white/5 border-white/10 text-neutral-500"
+                  : "bg-gradient-to-r from-neutral-400/10 to-neutral-300/10 border-neutral-400/30 text-neutral-300 hover:from-neutral-400/20 hover:to-neutral-300/20"
               )}
               aria-label="Play background audio"
             >
@@ -144,8 +144,8 @@ export function Header() {
               className={cn(
                 "inline-flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300",
                 !isPlaying
-                  ? "bg-white/5 border-white/10 text-slate-500 hover:bg-slate-400/10 hover:border-slate-400/30 hover:text-slate-300"
-                  : "bg-gradient-to-r from-slate-400/10 to-slate-300/10 border-slate-400/30 text-slate-300 hover:from-slate-400/20 hover:to-slate-300/20"
+                  ? "bg-white/5 border-white/10 text-neutral-500 hover:bg-neutral-400/10 hover:border-neutral-400/30 hover:text-neutral-300"
+                  : "bg-gradient-to-r from-neutral-400/10 to-neutral-300/10 border-neutral-400/30 text-neutral-300 hover:from-neutral-400/20 hover:to-neutral-300/20"
               )}
               aria-label="Pause background audio"
             >
@@ -177,7 +177,7 @@ export function Header() {
                 transition={{ duration: 0.2 }}
                 className="absolute top-full left-0 right-0 md:hidden shadow-2xl shadow-black/50"
               >
-                <div className="px-4 py-4 space-y-2 bg-[#030712]/95 backdrop-blur-xl border-t border-white/5">
+                <div className="px-4 py-4 space-y-2 bg-neutral-950/95 backdrop-blur-xl border-t border-white/5">
                   {navItems.map((item) => {
                     const isActive = activeSection === item.id;
                     return (
@@ -187,7 +187,7 @@ export function Header() {
                         className={cn(
                           "w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors",
                           isActive
-                            ? "text-slate-300 bg-slate-700/10"
+                            ? "text-neutral-300 bg-neutral-700/10"
                             : "text-text-secondary hover:text-text-primary hover:bg-surface-light"
                         )}
                       >

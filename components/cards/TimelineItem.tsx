@@ -37,51 +37,51 @@ export function TimelineItem({
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="relative pl-8 pb-12 border-l border-divider last:border-l-0 last:pb-0"
     >
-      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-400 shadow-[0_0_10px_rgba(148,163,184,0.8)] border-2 border-white/20 z-10" />
-      <div className="bg-slate-900/20 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden group hover:border-slate-400/30 transition-colors duration-500 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-neutral-400 shadow-[0_0_10px_rgba(163,163,163,0.8)] border-2 border-white/20 z-10" />
+      <div className="bg-neutral-900/20 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden group hover:border-neutral-400/30 transition-colors duration-500 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]">
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         
         <div className="relative z-10">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
             <div>
-              <h3 className="text-xl font-heading font-semibold text-slate-50 mb-1 group-hover:text-slate-200 transition-colors">
+              <h3 className="text-xl font-heading font-semibold text-neutral-50 mb-1 group-hover:text-neutral-200 transition-colors">
                 {title}
               </h3>
-              <p className="text-slate-300 font-medium">{company}</p>
+              <p className="text-neutral-300 font-medium">{company}</p>
               {location && (
-                <div className="flex items-center text-slate-500 text-sm mt-1">
+                <div className="flex items-center text-neutral-500 text-sm mt-1">
                   <MapPin className="w-3.5 h-3.5 mr-1" />
                   {location}
                 </div>
               )}
             </div>
-            <div className="flex items-center text-slate-400 text-sm mt-2 md:mt-0 bg-white/5 px-3 py-1 rounded-full border border-white/5">
+            <div className="flex items-center text-neutral-400 text-sm mt-2 md:mt-0 bg-white/5 px-3 py-1 rounded-full border border-white/5">
               <Calendar className="w-3.5 h-3.5 mr-2" />
               {period}
             </div>
           </div>
-          <p className="text-slate-300 mb-6 leading-relaxed">{description}</p>
+          <p className="text-neutral-300 mb-6 leading-relaxed">{description}</p>
           
           {projects && projects.length > 0 && (
             <div className="mb-6 space-y-4">
-              <h4 className="text-sm font-semibold text-slate-300 uppercase tracking-wide">Key Projects:</h4>
+              <h4 className="text-sm font-semibold text-neutral-300 uppercase tracking-wide">Key Projects:</h4>
               {projects.map((project, idx) => (
                 <div key={idx} className="bg-black/20 border border-white/5 rounded-xl p-4">
                   <div className="flex items-start justify-between mb-2">
-                    <h5 className="text-base font-medium text-slate-200">{project.name}</h5>
+                    <h5 className="text-base font-medium text-neutral-200">{project.name}</h5>
                     {project.link && (
                       <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-slate-300 hover:text-slate-200 transition-colors"
+                        className="text-neutral-300 hover:text-neutral-200 transition-colors"
                         aria-label={`View ${project.name}`}
                       >
                         <ExternalLink className="w-4 h-4" />
                       </a>
                     )}
                   </div>
-                  <p className="text-sm text-slate-400 leading-relaxed">{project.description}</p>
+                  <p className="text-sm text-neutral-400 leading-relaxed">{project.description}</p>
                 </div>
               ))}
             </div>

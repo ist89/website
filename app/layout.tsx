@@ -3,7 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Starfield } from "@/components/background/Starfield";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 // import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 import { AudioProvider } from "@/components/audio/AudioProvider";
 import { getSiteUrl } from "@/lib/utils";
@@ -69,9 +69,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${sora.variable} font-sans antialiased bg-background text-text-primary overflow-x-hidden`}
+        className={`${inter.variable} ${sora.variable} font-sans antialiased bg-neutral-950 text-text-primary overflow-x-hidden`}
       >
-        <Starfield />
+        <BackgroundBeams className="fixed inset-0 -z-10 pointer-events-none" />
         {/* <DottedGlowBackground
           className="fixed inset-0 -z-10 pointer-events-none"
           opacity={0.6}
@@ -85,7 +85,7 @@ export default function RootLayout({
         /> */}
         <AudioProvider>
           <Header />
-          <main className="pt-16">
+          <main className="pt-16 relative z-0">
             {children}
           </main>
           <Footer />

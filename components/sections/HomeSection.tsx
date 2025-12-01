@@ -34,19 +34,19 @@ export function HomeSection() {
           <div className="flex-1 space-y-6 text-center md:text-left">
             <Reveal>
               {/* ===== EDIT HERO TITLE HERE ===== */}
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-100 to-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
                 Tom Davidov
               </h1>
             </Reveal>
             <Reveal delay={0.1}>
               {/* ===== EDIT SUBTITLE HERE ===== */}
-              <p className="text-xl sm:text-2xl md:text-3xl text-slate-200/80 mb-4 font-light tracking-wide">
+              <p className="text-xl sm:text-2xl md:text-3xl text-neutral-200/80 mb-4 font-light tracking-wide">
                 Technical Program Manager & AI/ML Enthusiast
               </p>
             </Reveal>
             <Reveal delay={0.2}>
               {/* ===== EDIT DESCRIPTION TEXT HERE ===== */}
-              <p className="text-base sm:text-lg text-slate-400 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+              <p className="text-base sm:text-lg text-neutral-400 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
                 US Army Veteran | PMP® & CSM® Certified | Leading complex technical projects in Web3, DeFi, and AI-driven solutions.
                 Currently pursuing MBA, with plans for MS in IT and PhD in AI/ML.
               </p>
