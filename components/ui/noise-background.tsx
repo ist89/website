@@ -9,7 +9,7 @@ import {
   useSpring,
   useTransform,
   MotionValue,
-} from "motion/react";
+} from "framer-motion";
 import { useEffect, useRef } from "react";
 
 // Helper component for gradient layers
@@ -83,7 +83,6 @@ export const NoiseBackground = ({
   // Initialize position to center
   useEffect(() => {
     if (!containerRef.current) return;
-
     const container = containerRef.current;
     const rect = container.getBoundingClientRect();
     const centerX = rect.width / 2;
@@ -118,7 +117,6 @@ export const NoiseBackground = ({
   // Animate using motion/react's useAnimationFrame
   useAnimationFrame((time) => {
     if (!animating || !containerRef.current) return;
-
     const rect = containerRef.current.getBoundingClientRect();
     const maxX = rect.width;
     const maxY = rect.height;
@@ -140,7 +138,6 @@ export const NoiseBackground = ({
     // When hitting edges, generate a completely new random direction
     // This ensures truly random movement in all 360 degrees, not just horizontal/vertical
     const padding = 20; // Keep some distance from edges
-
     if (
       newX < padding ||
       newX > maxX - padding ||
@@ -154,8 +151,10 @@ export const NoiseBackground = ({
         x: Math.cos(angle) * magnitude,
         y: Math.sin(angle) * magnitude,
       };
+
       // Reset timer to allow immediate new direction
       lastDirectionChangeRef.current = time;
+
       // Clamp position to stay within bounds
       newX = Math.max(padding, Math.min(maxX - padding, newX));
       newY = Math.max(padding, Math.min(maxY - padding, newY));

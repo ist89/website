@@ -5,7 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Github, Linkedin, BookOpen, Mail } from "lucide-react";
 import { useState, FormEvent } from "react";
-import { motion } from "framer-motion";
+import { NoiseBackground } from "@/components/ui/noise-background";
 
 const socialLinks = [
   {
@@ -71,7 +71,7 @@ export function ContactSection() {
   };
 
   return (
-    <ScrollSection id="contact" className="pt-0 md:pt-4">
+    <ScrollSection id="contact" className="pt-0 min-h-0">
       <Reveal>
         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 flex items-center gap-3">
           <Mail className="w-8 h-8 md:w-10 md:h-10 text-neutral-300" />
@@ -86,23 +86,15 @@ export function ContactSection() {
       </Reveal>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{
-            duration: 0.6,
-            delay: 0.2,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="bg-neutral-900/20 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden group hover:border-neutral-400/30 transition-colors duration-500 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]"
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-neutral-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          <h3 className="text-2xl font-heading font-semibold mb-6 text-neutral-100 flex items-center">
-            <span className="w-2 h-8 bg-neutral-400 rounded-full mr-4 shadow-[0_0_20px_rgba(163,163,163,0.5)]" />
-            Send a Message
-          </h3>
-          <form onSubmit={handleSubmit} className="space-y-6" suppressHydrationWarning>
+        <Reveal delay={0.2}>
+          <div className="bg-neutral-900/20 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden group hover:border-neutral-400/30 transition-colors duration-500 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]">
+            <div className="absolute inset-0 bg-gradient-to-b from-neutral-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <h3 className="text-2xl font-heading font-semibold mb-6 text-neutral-100 flex items-center">
+              <span className="w-2 h-8 bg-neutral-400 rounded-full mr-4 shadow-[0_0_20px_rgba(163,163,163,0.5)]" />
+              Send a Message
+            </h3>
+            <form onSubmit={handleSubmit} className="space-y-6" suppressHydrationWarning>
+            <div>
               <label
                 htmlFor="name"
                 className="block text-sm font-medium text-neutral-200/80 mb-2 pl-1"
@@ -123,6 +115,8 @@ export function ContactSection() {
                   placeholder="Enter your name"
                 />
               </div>
+            </div>
+            <div>
               <label
                 htmlFor="email"
                 className="block text-sm font-medium text-neutral-200/80 mb-2 pl-1"
@@ -143,6 +137,8 @@ export function ContactSection() {
                   placeholder="john@example.com"
                 />
               </div>
+            </div>
+            <div>
               <label
                 htmlFor="message"
                 className="block text-sm font-medium text-neutral-200/80 mb-2 pl-1"
@@ -163,10 +159,18 @@ export function ContactSection() {
                   placeholder="Your message here..."
                 />
               </div>
+            </div>
+            <NoiseBackground
+              containerClassName="w-full p-[4px] rounded-xl"
+              gradientColors={[
+                "rgb(255, 100, 150)",
+                "rgb(100, 150, 255)",
+                "rgb(255, 200, 100)",
+              ]}
+            >
               <Button
                 type="submit"
-                variant="primary"
-                className="w-full"
+                className="w-full bg-gradient-to-r from-neutral-100 via-neutral-50 to-white text-black border-none shadow-md hover:shadow-xl hover:from-neutral-200 hover:via-neutral-200 hover:to-neutral-200 transition-all duration-300"
               >
                 {status === "sending"
                   ? "Sending..."
@@ -174,26 +178,18 @@ export function ContactSection() {
                   ? "Message Sent!"
                   : "Send Message"}
               </Button>
-              {status === "error" && (
-                <p className="text-red-400 text-sm">
-                  Something went wrong. Please try again or use email directly.
-                </p>
-              )}
+            </NoiseBackground>
+            {status === "error" && (
+              <p className="text-red-400 text-sm">
+                Something went wrong. Please try again or use email directly.
+              </p>
+            )}
           </form>
-        </motion.div>
+          </div>
+        </Reveal>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{
-            duration: 0.6,
-            delay: 0.3,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          suppressHydrationWarning
-          className="bg-neutral-900/20 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-neutral-400/30 transition-colors duration-300 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]"
-        >
+        <Reveal delay={0.3}>
+          <div className="bg-neutral-900/20 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative overflow-hidden hover:border-neutral-400/30 transition-colors duration-300 shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)]">
           <h3 className="text-2xl font-heading font-semibold mb-6 text-neutral-100 flex items-center">
             <span className="w-2 h-8 bg-neutral-300 rounded-full mr-4 shadow-[0_0_20px_rgba(163,163,163,0.5)]" />
             Connect Socially
@@ -228,7 +224,8 @@ export function ContactSection() {
                 );
               })}
           </div>
-        </motion.div>
+          </div>
+        </Reveal>
       </div>
     </ScrollSection>
   );

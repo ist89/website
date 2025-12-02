@@ -2,34 +2,12 @@
 
 import { ScrollSection } from "@/components/ScrollSection";
 import { Reveal } from "@/components/motion/Reveal";
-import { Badge } from "@/components/ui/Badge";
-import { User, Award } from "lucide-react";
+import { User } from "lucide-react";
 import { PhotoGallery } from "@/components/PhotoGallery";
-
-const skills = [
-  "Project Management (PMP®)",
-  "Agile/Scrum (CSM®)",
-  "AI/ML",
-  "Web3",
-  "DeFi",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Python",
-  "Cybersecurity",
-  "CI/CD",
-  "DevOps",
-  "GitLab",
-  "N8N",
-  "SaaS",
-  "ITIL v4",
-  "Lean Six Sigma",
-];
 
 export function AboutSection() {
   return (
-    <ScrollSection id="about">
+    <ScrollSection id="about" className="pb-0 min-h-0">
       <Reveal>
         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 flex items-center gap-3">
           <User className="w-8 h-8 md:w-10 md:h-10 text-neutral-300" />
@@ -77,22 +55,6 @@ export function AboutSection() {
             },
           ]}
         />
-      </Reveal>
-
-      <Reveal delay={0.2}>
-        <h3 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-neutral-100 flex items-center gap-3">
-          <Award className="w-8 h-8 md:w-10 md:h-10 text-neutral-300" />
-          Skills & Certifications
-        </h3>
-      </Reveal>
-      <Reveal delay={0.3}>
-        <div className="flex flex-wrap gap-3">
-          {skills.map((skill) => (
-            <Badge key={skill} variant="accent">
-              {skill}
-            </Badge>
-          ))}
-        </div>
       </Reveal>
     </ScrollSection>
   );

@@ -9,6 +9,7 @@ import { useAudio } from "@/components/audio/AudioProvider";
 const navItems = [
   { id: "home", label: "Home" },
   { id: "about", label: "Bio" },
+  { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "blog", label: "Blog" },
@@ -73,7 +74,7 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/70 backdrop-blur-xl border-b border-white/5"
+      className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/30 backdrop-blur-xl border-b border-white/5"
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16 relative">
@@ -87,7 +88,7 @@ export function Header() {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => scrollToSection("home")}
-                  className="text-xl font-heading font-semibold text-text-primary hover:text-neutral-300 transition-colors"
+                  className="text-xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-300 via-white to-slate-300 drop-shadow-[0_0_6px_rgba(255,255,255,0.25)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all duration-300"
                 >
                   Tom Davidov
                 </motion.button>
@@ -177,7 +178,7 @@ export function Header() {
                 transition={{ duration: 0.2 }}
                 className="absolute top-full left-0 right-0 md:hidden shadow-2xl shadow-black/50"
               >
-                <div className="px-4 py-4 space-y-2 bg-neutral-950/95 backdrop-blur-xl border-t border-white/5">
+                <div className="px-4 py-4 space-y-2 bg-neutral-950/50 backdrop-blur-xl border-t border-white/5">
                   {navItems.map((item) => {
                     const isActive = activeSection === item.id;
                     return (

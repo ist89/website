@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { NoiseBackground } from "@/components/ui/noise-background";
 
 interface PhotoGalleryProps {
   photos: Array<{
@@ -26,7 +27,7 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
 
   return (
     <>
-      <div className="relative flex justify-center items-center h-[350px] sm:h-[400px] md:h-[500px] mb-16 overflow-x-auto overflow-y-visible px-4">
+      <div className="relative w-full h-[350px] sm:h-[400px] md:h-[500px] mb-16">
         {photos.map((photo, index) => (
           <motion.div
             key={index}
@@ -35,34 +36,41 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
             transition={{ delay: index * 0.1, duration: 0.5 }}
             className={cn(
               "absolute cursor-pointer group",
-              "transform transition-all duration-300 hover:scale-105 hover:z-20",
-              "rounded-2xl overflow-hidden shadow-2xl",
-              "bg-neutral-900/40 border border-white/10 backdrop-blur-sm"
+              "transform transition-all duration-300 hover:z-20",
             )}
             style={{
-              left: `calc(50% + ${(index - (photos.length - 1) / 2) * 60 - 40}px)`,
-              transform: `translateX(-50%) rotate(${(index - (photos.length - 1) / 2) * -8}deg) translateY(${index * 10}px)`,
-              zIndex: photos.length - index,
+              left: `calc(50% + ${(index - (photos.length - 1) / 2) * 120}px)`,
+              transform: `translateX(-50%) rotate(${(index - (photos.length - 1) / 2) * 12}deg) translateY(${Math.abs(index - 1) * 10}px)`,
+              zIndex: index,
             }}
             onClick={() => handleCardClick(index)}
             whileHover={{ 
-              scale: 1.05,
+              scale: 1.1,
               rotate: 0,
-              y: -10,
+              y: -30,
               zIndex: 30,
             }}
           >
-            <div className="relative w-[240px] h-[320px] sm:w-[280px] sm:h-[380px] md:w-[320px] md:h-[420px]">
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, 320px"
-              />
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
+            <NoiseBackground
+              containerClassName="p-[2px] rounded-2xl"
+              gradientColors={[
+                "rgb(255, 100, 150)",
+                "rgb(100, 150, 255)",
+                "rgb(255, 200, 100)",
+              ]}
+            >
+              <div className="relative w-[240px] h-[320px] sm:w-[280px] sm:h-[380px] md:w-[320px] md:h-[420px] rounded-xl overflow-hidden bg-neutral-900">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, 320px"
+                />
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </NoiseBackground>
           </motion.div>
         ))}
       </div>

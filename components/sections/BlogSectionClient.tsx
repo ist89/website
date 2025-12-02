@@ -12,7 +12,7 @@ interface BlogSectionClientProps {
 
 export function BlogSectionClient({ articles }: BlogSectionClientProps) {
   return (
-    <ScrollSection id="blog" className="pt-0 md:pt-4 pb-0 md:pb-4">
+    <ScrollSection id="blog" className="pt-0 md:pt-4 pb-0 md:pb-2 min-h-0">
       <Reveal>
         <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 flex items-center gap-3">
           <BookOpen className="w-8 h-8 md:w-10 md:h-10 text-neutral-300" />

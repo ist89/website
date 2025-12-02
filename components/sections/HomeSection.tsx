@@ -3,23 +3,11 @@
 import { ScrollSection } from "@/components/ScrollSection";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
-import { FileText, Code } from "lucide-react";
+import { FileText } from "lucide-react";
 import { HeroPixelatedAvatar } from "@/app/components/HeroPixelatedAvatar";
+import { NoiseBackground } from "@/components/ui/noise-background";
 
 export function HomeSection() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <ScrollSection id="home" className="flex items-center">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,7 +22,7 @@ export function HomeSection() {
           <div className="flex-1 space-y-6 text-center md:text-left">
             <Reveal>
               {/* ===== EDIT HERO TITLE HERE ===== */}
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-100 to-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-slate-300 via-white to-slate-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
                 Tom Davidov
               </h1>
             </Reveal>
@@ -54,20 +42,22 @@ export function HomeSection() {
             <Reveal delay={0.3}>
               {/* ===== EDIT BUTTONS HERE ===== */}
               <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-                <Button
-                  href="/resume"
-                  variant="primary"
+                <NoiseBackground
+                  containerClassName="w-fit p-[4px] rounded-xl"
+                  gradientColors={[
+                    "rgb(255, 100, 150)",
+                    "rgb(100, 150, 255)",
+                    "rgb(255, 200, 100)",
+                  ]}
                 >
-                  <FileText className="w-4 h-4" />
-                  View Resume
-                </Button>
-                <Button
-                  onClick={() => scrollToSection("projects")}
-                  variant="secondary"
-                >
-                  <Code className="w-4 h-4" />
-                  View Projects
-                </Button>
+                  <Button
+                    href="/resume"
+                    className="bg-gradient-to-r from-neutral-100 via-neutral-50 to-white text-black border-none shadow-md hover:shadow-xl hover:from-neutral-200 hover:via-neutral-200 hover:to-neutral-200 transition-all duration-300"
+                  >
+                    <FileText className="w-4 h-4" />
+                    View Resume
+                  </Button>
+                </NoiseBackground>
               </div>
             </Reveal>
           </div>

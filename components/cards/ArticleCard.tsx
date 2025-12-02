@@ -9,7 +9,7 @@ interface ArticleCardProps {
 
 export function ArticleCard({ article }: ArticleCardProps) {
   return (
-    <Card>
+    <Card className="h-full">
       <div className="flex flex-col h-full">
         <h3 className="text-xl font-heading font-semibold text-text-primary mb-3">
           {article.title}
