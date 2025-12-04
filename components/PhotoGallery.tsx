@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
 import Image from "next/image";
-import { X } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { NoiseBackground } from "@/components/ui/noise-background";
+import {
+  DraggableCardBody,
+  DraggableCardContainer,
+} from "@/components/ui/draggable-card";
 
 interface PhotoGalleryProps {
   photos: Array<{
@@ -15,107 +15,46 @@ interface PhotoGalleryProps {
 }
 
 export function PhotoGallery({ photos }: PhotoGalleryProps) {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-  const handleCardClick = (index: number) => {
-    setExpandedIndex(index);
-  };
-
-  const handleClose = () => {
-    setExpandedIndex(null);
-  };
+  // Layout configuration for the 5 photos - adjusted to be more centered and less spread out
+  const layoutConfig = [
+    {
+      className: "absolute top-[10%] left-[15%] md:left-[25%] rotate-[-6deg] z-10",
+    },
+    {
+      className: "absolute top-[30%] left-[20%] md:left-[30%] rotate-[-3deg] z-20",
+    },
+    {
+      className: "absolute top-[5%] left-[35%] md:left-[45%] rotate-[5deg] z-30",
+    },
+    {
+      className: "absolute top-[25%] left-[40%] md:left-[50%] rotate-[8deg] z-40",
+    },
+    {
+      className: "absolute top-[15%] right-[10%] md:right-[20%] rotate-[-2deg] z-50",
+    },
+  ];
 
   return (
-    <>
-      <div className="relative w-full h-[350px] sm:h-[400px] md:h-[500px] mb-16">
-        {photos.map((photo, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            className={cn(
-              "absolute cursor-pointer group",
-              "transform transition-all duration-300 hover:z-20",
-            )}
-            style={{
-              left: `calc(50% + ${(index - (photos.length - 1) / 2) * 120}px)`,
-              transform: `translateX(-50%) rotate(${(index - (photos.length - 1) / 2) * 12}deg) translateY(${Math.abs(index - 1) * 10}px)`,
-              zIndex: index,
-            }}
-            onClick={() => handleCardClick(index)}
-            whileHover={{ 
-              scale: 1.1,
-              rotate: 0,
-              y: -30,
-              zIndex: 30,
-            }}
-          >
-            <NoiseBackground
-              containerClassName="p-[2px] rounded-2xl"
-              gradientColors={[
-                "rgb(255, 100, 150)",
-                "rgb(100, 150, 255)",
-                "rgb(255, 200, 100)",
-              ]}
-            >
-              <div className="relative w-[240px] h-[320px] sm:w-[280px] sm:h-[380px] md:w-[320px] md:h-[420px] rounded-xl overflow-hidden bg-neutral-900">
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, 320px"
-                />
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            </NoiseBackground>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Expanded Image Modal */}
-      <AnimatePresence>
-        {expandedIndex !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
-            onClick={handleClose}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="relative max-w-7xl max-h-[90vh] w-full h-full"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={handleClose}
-                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-neutral-900/80 border border-white/10 hover:bg-neutral-800 transition-colors"
-                aria-label="Close image"
-              >
-                <X className="w-6 h-6 text-neutral-100" />
-              </button>
-              <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                <Image
-                  src={photos[expandedIndex].src}
-                  alt={photos[expandedIndex].alt}
-                  fill
-                  className="object-contain"
-                  sizes="100vw"
-                  priority
-                />
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+    <DraggableCardContainer className="relative flex h-[600px] w-full items-center justify-center">
+      {photos.map((photo, index) => {
+        // cycle through configs if more photos than configs
+        const config = layoutConfig[index % layoutConfig.length];
+        
+        return (
+          <DraggableCardBody key={index} className={config.className}>
+            <div className="relative h-64 w-64 md:h-80 md:w-80">
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="pointer-events-none object-cover rounded-sm shadow-inner border border-neutral-200/20"
+                sizes="(max-width: 768px) 256px, 320px"
+                draggable={false}
+              />
+            </div>
+          </DraggableCardBody>
+        );
+      })}
+    </DraggableCardContainer>
   );
 }
-

@@ -93,7 +93,7 @@ export function ContactSection() {
               <span className="w-2 h-8 bg-neutral-400 rounded-full mr-4 shadow-[0_0_20px_rgba(163,163,163,0.5)]" />
               Send a Message
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-6" suppressHydrationWarning>
+            <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label
                 htmlFor="name"

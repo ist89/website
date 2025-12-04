@@ -55,16 +55,32 @@ export async function getProjects(
     );
 
     const repos = await fetchGitHubRepos(username);
-    const pinnedNames = pinnedProjects?.default?.pinned || [];
+    const pinnedConfig = pinnedProjects?.default?.pinned || [];
 
     // Separate pinned and regular repos
     const pinned: (GitHubRepo | PinnedProject)[] = [];
     const regular: GitHubRepo[] = [];
 
-    repos.forEach((repo) => {
-      if (pinnedNames.includes(repo.name)) {
-        pinned.push(repo);
+    // Handle pinned projects - can be strings (names) or full objects
+    pinnedConfig.forEach((pin: string | PinnedProject) => {
+      if (typeof pin === "string") {
+        // Legacy: just a name string
+        const repo = repos.find((r) => r.name === pin);
+        if (repo) {
+          pinned.push(repo);
+        }
       } else {
+        // New: full PinnedProject object
+        pinned.push(pin);
+      }
+    });
+
+    repos.forEach((repo) => {
+      // Only add to regular if not already pinned
+      const isPinned = pinnedConfig.some((pin: string | PinnedProject) => 
+        typeof pin === "string" ? pin === repo.name : pin.name === repo.name
+      );
+      if (!isPinned) {
         regular.push(repo);
       }
     });

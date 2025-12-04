@@ -1,4 +1,10 @@
 {
-  "pinned": []
+  "pinned": [
+    {
+      "name": "website",
+      "description": "Personal portfolio website for Tom Davidov",
+      "url": "https://github.com/ist89/website",
+      "topics": ["nextjs", "react", "tailwindcss", "framer-motion", "typescript"]
+    }
+  ]
 }
-

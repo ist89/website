@@ -5,7 +5,7 @@
     "location": "Lisbon, Portugal (Remote)",
     "period": "October 2023 - Present",
     "description": "Leading complex technical projects across Web3, DeFi, trading automation, and large-scale operational programs. Managing integrated project timelines and sprint schedules across multiple development streams, ensuring deliverables meet planned milestones. Delivering recurring project status reports summarizing risks, performance metrics, blockers, and next-phase priorities for leadership.",
-    "technologies": ["Agile/Scrum", "CI/CD", "GitLab", "Web3", "DeFi", "Blockchain", "Polygon", "Solana", "Project Management"],
+    "technologies": ["Agile/Scrum", "CI/CD", "Gitlab/Github", "Web3", "DeFi", "DevOps", "Polygon", "Solana", "Polymarket", "Meteora", "IT Project Management"],
     "projects": [
       {
         "name": "Olympus App - Copy Trading Bot",
@@ -30,7 +30,7 @@
     "location": "Rzeszow, Poland",
     "period": "January 2022 - October 2023",
     "description": "Directed $35M+ logistics operations for U.S. Department of State aid to Ukraine, delivering 100+ vehicles worth $6.2M within five months. Liaised with INL, vendors, and customs partners to ensure on-time, compliant delivery of critical assets. Conducted risk assessments and quality control to safeguard budgets and reduce defects across multiple projects.",
-    "technologies": ["Logistics Management", "Risk Assessment", "Quality Control", "Cross-Border Operations", "Stakeholder Management"]
+    "technologies": ["Logistics Management", "Procurement", "Risk Assessment", "Quality Control", "Cross-Border Operations", "Stakeholder Management", "QA/QC"]
   },
   {
     "title": "Safety, Performance & Leadership Coach",
@@ -38,7 +38,7 @@
     "location": "Virginia Beach, VA",
     "period": "October 2019 - January 2021",
     "description": "Designed and implemented performance and safety programs for clients in high-risk industries, improving reliability and compliance. Led cross-functional teams and trained 100+ personnel, fostering accountability and leadership engagement.",
-    "technologies": ["Training & Development", "Safety Programs", "Performance Management", "Team Leadership"]
+    "technologies": ["Public Speaking", "Training & Development", "Safety Programs", "Performance Management", "Team Leadership", "Oil & Gas"]
   },
   {
     "title": "Division Chief",
@@ -46,13 +46,13 @@
     "location": "Doha, Qatar",
     "period": "October 2018 - April 2019",
     "description": "Directed multinational team delivering operational intelligence and daily briefings for senior U.S. and coalition leaders. Coordinated airspace deconfliction with Russian forces, enabling precision operations and humanitarian missions.",
-    "technologies": ["Operational Intelligence", "Strategic Planning", "Multinational Coordination", "Risk Management"]
+    "technologies": ["Operational Intelligence", "Strategic Planning", "Multinational Coordination", "Risk Management", "Air & Land Deconfliction"]
   },
   {
     "title": "Sergeant",
     "company": "United States Army",
     "location": "Various Locations",
-    "period": "2011 - 2019",
+    "period": "November 2011 - December 2019",
     "description": "Served honorably for 8 years in the US Army, with responsibilities split between strategic intelligence operations and aerial surveillance missions. Worked in the strategic intelligence field for half of service, supporting National Security Agency (NSA) operations. Served as an aviator for the Open Skies Treaty program for the remaining half, conducting aerial surveillance missions over two dozen flights. Conducted acquisition testing and validation of a $56 million Digital Visual Imaging System. As a government diplomat, facilitated negotiations and correspondence between the United States and foreign nations, protecting US treaty rights and ensuring compliance with international agreements.",
     "technologies": ["Strategic Intelligence", "Aerial Surveillance", "Open Skies Treaty", "Diplomatic Relations", "Systems Testing", "Intelligence Operations"]
   }

@@ -10,7 +10,7 @@ import {
   useTransform,
   MotionValue,
 } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Helper component for gradient layers
 function GradientLayer({
@@ -66,6 +66,7 @@ export const NoiseBackground = ({
   backdropBlur = false,
   animating = true,
 }: NoiseBackgroundProps) => {
+  const [mounted, setMounted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -80,16 +81,21 @@ export const NoiseBackground = ({
   const velocityRef = useRef({ x: 0, y: 0 });
   const lastDirectionChangeRef = useRef(0);
 
+  // Set mounted state
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Initialize position to center
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || !mounted) return;
     const container = containerRef.current;
     const rect = container.getBoundingClientRect();
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     x.set(centerX);
     y.set(centerY);
-  }, [x, y]);
+  }, [x, y, mounted]);
 
   // Generate random velocity
   const generateRandomVelocityRef = useRef(() => {
@@ -180,6 +186,7 @@ export const NoiseBackground = ({
           "--noise-opacity": noiseIntensity,
         } as React.CSSProperties
       }
+      suppressHydrationWarning
     >
       {/* Moving gradient layers */}
       <GradientLayer
@@ -224,7 +231,7 @@ export const NoiseBackground = ({
       </div>
 
       {/* Content */}
-      <div className={cn("relative z-10", className)}>{children}</div>
+      <div className={cn("relative z-10", className)} suppressHydrationWarning>{children}</div>
     </div>
   );
 };

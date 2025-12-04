@@ -19,19 +19,18 @@ export function AboutSection() {
           <div className="absolute inset-0 bg-gradient-to-b from-neutral-400/5 to-transparent pointer-events-none" />
           <div className="relative z-10">
             <p className="text-lg leading-relaxed">
-              US Army veteran with 8 years of service. Technical Program Manager with 7+ years of experience 
+              Technical Program Manager with 7+ years of experience 
               leading complex technical projects across Web3, DeFi, trading automation, and large-scale operational programs. 
               Certified Project Management Professional (PMP®) and Certified Scrum Master (CSM®).
             </p>
             <p className="text-lg leading-relaxed mt-6">
-              Passionate about AI, Web3, and DeFi technologies. Currently in final MBA term at Southern New Hampshire 
-              University (4.0 GPA), with plans to pursue an MS in IT, followed by a PhD in AI/ML. Working towards ASQ 
+              Passionate about AI, Web3, and DeFi technologies. Currently in final MBA term (4.0 GPA), with plans to pursue an MS in IT, followed by a PhD in AI/ML. Working towards ASQ 
               Lean Six Sigma Green Belt (LSS-GB) and ITIL v4 certifications.
             </p>
             <p className="text-lg leading-relaxed mt-6">
-              Beyond program management, an amateur frontend developer with experience in cybersecurity. Has created 
-              several passive income streams through SaaS N8N AI agents. Managed $35M+ logistics operations for U.S. 
-              Department of State aid to Ukraine.
+              Beyond program & project management, an amateur vibe coder, with experience in cybersecurity, AI agents and IT overall. 
+              Constantly finding ways to find passive income streams using SaaS N8N AI agents. Managed $35M+ logistics operations for U.S. 
+              Department of State aid to Ukraine. Led $56 million DVIS acquisition testing and validation. US Army veteran with 8 years of service.
             </p>
           </div>
         </div>
@@ -52,6 +51,14 @@ export function AboutSection() {
             {
               src: "/photo3.png",
               alt: "Photo 3",
+            },
+            {
+              src: "/photo4.png",
+              alt: "Photo 4",
+            },
+            {
+              src: "/photo5.png",
+              alt: "Photo 5",
             },
           ]}
         />
